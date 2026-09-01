@@ -14,8 +14,8 @@
       "equipment": "Naked (No gear)"
     },
     "level": 40,
-    "progress": "25%",
-    "price": "400 MC"
+    "currentLevel": "40",
+    "price": "500 MC"
   },
   {
     "id": 2,
@@ -29,10 +29,28 @@
       "class": "Treasure Hunter",
       "race": "Human",
       "desc": "Excellent backstab damage, ideal for fast adena farming and pvp.",
-       "equipment": "Naked (No gear)"
+      "equipment": "Naked (No gear)"
     },
     "level": 40,
-    "progress": "60%",
-    "price": "300 MC"
+    "currentLevel": "40",
+    "price": "350 MC"
+  },
+  {
+    "id": 3,
+    "es": {
+      "class": "Overlord",
+      "race": "Orco",
+      "desc": "Support/AOE",
+      "equipment": "Desnudo (Sin equipo)"
+    },
+    "en": {
+      "class": "Overlord",
+      "race": "Orc",
+      "desc": "Support/AOE",
+      "equipment": "Naked (No gear)"
+    },
+    "level": 40,
+    "currentLevel": "20",
+    "price": "600 MC"
   }
 ]
