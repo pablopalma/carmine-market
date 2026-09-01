@@ -46,12 +46,15 @@
         /* --- HEADER --- */
         header {
             padding: 20px 20px;
-            background: linear-gradient(to bottom, #000000, var(--bg-dark));
+            background: linear-gradient(to bottom, #000000, rgba(10, 10, 13, 0.9));
             border-bottom: 1px solid var(--gold-dark);
             box-shadow: 0 5px 20px rgba(0,0,0,0.8);
-            position: sticky;
+            position: fixed; /* Lo cambiamos a fixed para que flote sobre la portada al scrollear */
+            width: 100%;
             top: 0;
             z-index: 100;
+            box-sizing: border-box;
+            backdrop-filter: blur(5px);
         }
 
         .header-content {
@@ -117,6 +120,49 @@
             background-color: var(--gold-light);
             color: var(--bg-dark);
             box-shadow: 0 0 15px rgba(243, 229, 171, 0.4);
+        }
+
+        /* --- PORTADA (HERO SECTION) --- */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 50vh; 
+            min-height: 400px;
+            background-image: url('Screenshot_228.png'); /* Tu imagen */
+            background-size: cover;
+            background-position: center 20%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 80px; /* Margen para que no lo tape el header */
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, rgba(10, 10, 13, 0.3) 0%, rgba(10, 10, 13, 0.8) 70%, var(--bg-dark) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 10px #000;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--gold-light);
+            text-shadow: 2px 2px 5px #000;
+            font-style: italic;
+            margin: 0;
         }
 
         /* --- CONTENEDOR Y CARDS --- */
@@ -257,6 +303,13 @@
                 width: 100%;
                 justify-content: center;
             }
+            .hero {
+                margin-top: 130px;
+                height: 40vh;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
         }
     </style>
 </head>
@@ -266,7 +319,6 @@
         <div class="header-content">
             <h1 class="header-title" id="main-title">Mercado LU4 Carmine</h1>
             <div class="header-actions">
-                <!-- REEMPLAZA EL ENLACE DE ABAJO POR TU ID DE DISCORD -->
                 <a href="https://discord.com/users/314600554187980800" target="_blank" class="btn-request" id="btn-request">
                     <i class="fa-solid fa-wand-magic-sparkles"></i> <span id="request-text">Solicitar PJ</span>
                 </a>
@@ -275,6 +327,14 @@
         </div>
     </header>
 
+    <!-- PORTADA CON IMAGEN -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2 class="hero-title" id="hero-title">Mercado de Personajes</h2>
+            <p class="hero-subtitle" id="hero-subtitle">Adquiere tu héroe y domina el servidor</p>
+        </div>
+    </section>
+
     <main class="container">
         <div class="grid" id="characters-container">
             <div class="loading">Cargando personajes... / Loading characters...</div>
@@ -282,8 +342,6 @@
     </main>
 
     <script>
-        // --- CONFIGURACIÓN DE DISCORD PARA LAS CARDS (SERVER) ---
-        // Este es para comprar el PJ de la card. Puede ser al servidor o a tu DM también.
         const discordLink = "https://discord.com/users/314600554187980800"; 
         
         let characters = [];
@@ -292,6 +350,8 @@
         const uiText = {
             es: {
                 title: "Mercado LU4 Carmine",
+                heroTitle: "Mercado de Personajes",
+                heroSubtitle: "Adquiere tu héroe y domina el servidor",
                 race: "Raza",
                 level: "Nivel",
                 progress: "Progreso",
@@ -301,6 +361,8 @@
             },
             en: {
                 title: "LU4 Carmine Market",
+                heroTitle: "Character Marketplace",
+                heroSubtitle: "Acquire your hero and dominate the server",
                 race: "Race",
                 level: "Level",
                 progress: "Progress",
@@ -310,7 +372,6 @@
             }
         };
 
-        // --- CARGAR EL JSON ---
         async function loadData() {
             try {
                 const response = await fetch('data.json');
@@ -333,6 +394,8 @@
 
             // Textos de la UI
             document.getElementById('main-title').textContent = uiText[currentLang].title;
+            document.getElementById('hero-title').textContent = uiText[currentLang].heroTitle;
+            document.getElementById('hero-subtitle').textContent = uiText[currentLang].heroSubtitle;
             document.getElementById('request-text').textContent = uiText[currentLang].btnRequest;
             
             const container = document.getElementById('characters-container');
