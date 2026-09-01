@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mercado LU4 Carmine | Personajes</title>
     
-    <!-- Fuentes épicas y elegantes de Google Fonts -->
+    <link rel="icon" type="image/png" href="image/logo.png">
+
+    <meta property="og:title" content="Mercado LU4 Carmine | Personajes">
+    <meta property="og:description" content="Mercado de personajes del servidor LU4 Carmine. Adquiere tu héroe, farmea y domina el servidor.">
+    <meta property="og:image" content="https://pablopalma.github.io/carmine-market/Screenshot_228.png"> 
+    <meta property="og:url" content="https://pablopalma.github.io/carmine-market/">
+    <meta name="twitter:card" content="summary_large_image">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Iconos de FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -45,11 +50,11 @@
 
         /* --- HEADER --- */
         header {
-            padding: 20px 20px;
+            padding: 15px 20px;
             background: linear-gradient(to bottom, #000000, rgba(10, 10, 13, 0.9));
             border-bottom: 1px solid var(--gold-dark);
             box-shadow: 0 5px 20px rgba(0,0,0,0.8);
-            position: fixed; /* Lo cambiamos a fixed para que flote sobre la portada al scrollear */
+            position: fixed;
             width: 100%;
             top: 0;
             z-index: 100;
@@ -65,6 +70,26 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 15px;
+        }
+
+        /* --- CONTENEDOR DEL LOGO Y TÍTULO --- */
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .server-logo {
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .server-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
         }
 
         .header-title {
@@ -128,13 +153,13 @@
             width: 100%;
             height: 50vh; 
             min-height: 400px;
-            background-image: url('Screenshot_228.png'); /* Tu imagen */
+            background-image: url('Screenshot_228.png');
             background-size: cover;
             background-position: center 20%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 80px; /* Margen para que no lo tape el header */
+            margin-top: 80px; 
         }
 
         .hero::before {
@@ -299,6 +324,9 @@
                 flex-direction: column;
                 justify-content: center;
             }
+            .brand-container {
+                justify-content: center;
+            }
             .header-actions {
                 width: 100%;
                 justify-content: center;
@@ -317,7 +345,10 @@
 
     <header>
         <div class="header-content">
-            <h1 class="header-title" id="main-title">Mercado LU4 Carmine</h1>
+            <div class="brand-container">
+                <img src="image/logo.png" alt="Logo LU4" class="server-logo">
+                <h1 class="header-title" id="main-title">Mercado LU4</h1>
+            </div>
             <div class="header-actions">
                 <a href="https://discord.com/users/314600554187980800" target="_blank" class="btn-request" id="btn-request">
                     <i class="fa-solid fa-wand-magic-sparkles"></i> <span id="request-text">Solicitar PJ</span>
@@ -327,7 +358,6 @@
         </div>
     </header>
 
-    <!-- PORTADA CON IMAGEN -->
     <section class="hero">
         <div class="hero-content">
             <h2 class="hero-title" id="hero-title">Mercado de Personajes</h2>
@@ -349,7 +379,7 @@
 
         const uiText = {
             es: {
-                title: "Mercado LU4 Carmine",
+                title: "Mercado LU4",
                 heroTitle: "Mercado de Personajes",
                 heroSubtitle: "Adquiere tu héroe y domina el servidor",
                 race: "Raza",
@@ -360,7 +390,7 @@
                 btnRequest: "Solicitar PJ"
             },
             en: {
-                title: "LU4 Carmine Market",
+                title: "LU4 Market",
                 heroTitle: "Character Marketplace",
                 heroSubtitle: "Acquire your hero and dominate the server",
                 race: "Race",
@@ -392,7 +422,6 @@
         function renderPage() {
             if(characters.length === 0) return;
 
-            // Textos de la UI
             document.getElementById('main-title').textContent = uiText[currentLang].title;
             document.getElementById('hero-title').textContent = uiText[currentLang].heroTitle;
             document.getElementById('hero-subtitle').textContent = uiText[currentLang].heroSubtitle;
