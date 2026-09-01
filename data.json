@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "es": {
+      "class": "Sword Singer",
+      "race": "Elfa",
+      "desc": "Ideal para buffear parties físicas. Lista para seguir leveando en partys de melee.",
+      "equipment": "Desnudo (Sin equipo)"
+    },
+    "en": {
+      "class": "Sword Singer",
+      "race": "Elf",
+      "desc": "Ideal for physical party buffs. Ready to continue leveling in melee parties.",
+      "equipment": "Naked (No gear)"
+    },
+    "level": 40,
+    "progress": "25%",
+    "price": "400 MC"
+  },
+  {
+    "id": 2,
+    "es": {
+      "class": "Treasure Hunter",
+      "race": "Humano",
+      "desc": "Excelente daño por la espalda, ideal para farmear adena rápido y hacer pvp.",
+      "equipment": "Desnudo (Sin equipo)"
+    },
+    "en": {
+      "class": "Treasure Hunter",
+      "race": "Human",
+      "desc": "Excellent backstab damage, ideal for fast adena farming and pvp.",
+       "equipment": "Naked (No gear)"
+    },
+    "level": 40,
+    "progress": "60%",
+    "price": "300 MC"
+  }
+]

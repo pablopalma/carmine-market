@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado LU4 Carmine | Personajes</title>
+    
+    <!-- Fuentes épicas y elegantes de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- TEMA LINEAGE 2: OSCURO Y DORADO --- */
+        :root {
+            --bg-dark: #0a0a0d;
+            --bg-panel: #16161c;
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-dark: #997a00;
+            --text-light: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --discord: #5865F2;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at top, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at bottom, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cinzel Decorative', serif;
+            color: var(--gold-primary);
+            text-align: center;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
+        }
+
+        /* --- HEADER --- */
+        header {
+            padding: 20px 20px;
+            background: linear-gradient(to bottom, #000000, var(--bg-dark));
+            border-bottom: 1px solid var(--gold-dark);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.8);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .header-title {
+            font-size: 2rem;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .lang-toggle {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-primary);
+            padding: 10px 15px;
+            cursor: pointer;
+            font-family: 'Cinzel Decorative', serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .lang-toggle:hover {
+            background: var(--gold-primary);
+            color: var(--bg-dark);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Botón de solicitar PJ en el header */
+        .btn-request {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: transparent;
+            color: var(--gold-light);
+            border: 1px solid var(--gold-light);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .btn-request:hover {
+            background-color: var(--gold-light);
+            color: var(--bg-dark);
+            box-shadow: 0 0 15px rgba(243, 229, 171, 0.4);
+        }
+
+        /* --- CONTENEDOR Y CARDS --- */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 35px;
+        }
+
+        .card {
+            background-color: var(--bg-panel);
+            border: 1px solid #2a2a35;
+            border-radius: 10px;
+            padding: 30px 25px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold-dark);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+        }
+
+        .card-title {
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 15px;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            border-bottom: 1px dashed rgba(255,255,255,0.05);
+            padding-bottom: 5px;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            color: var(--text-light);
+            font-weight: 700;
+        }
+
+        .desc-box {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 3px solid var(--gold-dark);
+            font-size: 0.9rem;
+            font-style: italic;
+            line-height: 1.5;
+            margin: 20px 0;
+            color: var(--text-muted);
+            min-height: 70px;
+        }
+
+        .price-box {
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--gold-light);
+            font-family: 'Cinzel Decorative', serif;
+            font-weight: bold;
+            margin: 25px 0;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
+        /* --- BOTÓN DISCORD DE LA CARD --- */
+        .btn-discord {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            background-color: var(--discord);
+            color: white;
+            padding: 15px 0;
+            text-decoration: none;
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+            border: 1px solid transparent;
+        }
+
+        .btn-discord:hover {
+            background-color: #4752C4;
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(88, 101, 242, 0.4);
+        }
+
+        .loading {
+            text-align: center;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.5rem;
+            color: var(--gold-primary);
+            grid-column: 1 / -1;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                justify-content: center;
+            }
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1 class="header-title" id="main-title">Mercado LU4 Carmine</h1>
+            <div class="header-actions">
+                <!-- REEMPLAZA EL ENLACE DE ABAJO POR TU ID DE DISCORD -->
+                <a href="https://discord.com/users/TU_ID_DE_DISCORD_AQUI" target="_blank" class="btn-request" id="btn-request">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> <span id="request-text">Solicitar PJ</span>
+                </a>
+                <button class="lang-toggle" onclick="toggleLanguage()" id="lang-btn">EN / ES</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="grid" id="characters-container">
+            <div class="loading">Cargando personajes... / Loading characters...</div>
+        </div>
+    </main>
+
+    <script>
+        // --- CONFIGURACIÓN DE DISCORD PARA LAS CARDS (SERVER) ---
+        // Este es para comprar el PJ de la card. Puede ser al servidor o a tu DM también.
+        const discordLink = "https://discord.com/users/314600554187980800"; 
+        
+        let characters = [];
+        let currentLang = 'es';
+
+        const uiText = {
+            es: {
+                title: "Mercado LU4 Carmine",
+                race: "Raza",
+                level: "Nivel",
+                progress: "Progreso",
+                equipment: "Equipo",
+                btnContact: "Comprar",
+                btnRequest: "Solicitar PJ"
+            },
+            en: {
+                title: "LU4 Carmine Market",
+                race: "Race",
+                level: "Level",
+                progress: "Progress",
+                equipment: "Gear",
+                btnContact: "Buy",
+                btnRequest: "Request Char"
+            }
+        };
+
+        // --- CARGAR EL JSON ---
+        async function loadData() {
+            try {
+                const response = await fetch('data.json');
+                characters = await response.json();
+                renderPage();
+            } catch (error) {
+                document.getElementById('characters-container').innerHTML = 
+                    `<div class="loading" style="color: red;">Error al cargar los datos. Verifica el archivo data.json.</div>`;
+                console.error("Error cargando el JSON:", error);
+            }
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            renderPage();
+        }
+
+        function renderPage() {
+            if(characters.length === 0) return;
+
+            // Textos de la UI
+            document.getElementById('main-title').textContent = uiText[currentLang].title;
+            document.getElementById('request-text').textContent = uiText[currentLang].btnRequest;
+            
+            const container = document.getElementById('characters-container');
+            container.innerHTML = '';
+
+            characters.forEach(char => {
+                const data = char[currentLang];
+                const ui = uiText[currentLang];
+                
+                const eqTextLower = data.equipment.toLowerCase();
+                const eqColor = (eqTextLower.includes('desnudo') || eqTextLower.includes('naked')) ? '#ff4c4c' : '#aee2a4';
+
+                const cardHTML = `
+                    <div class="card">
+                        <h2 class="card-title">${data.class}</h2>
+                        
+                        <div class="stat-row">
+                            <span class="stat-label">${ui.race}</span>
+                            <span class="stat-value">${data.race}</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">${ui.level}</span>
+                            <span class="stat-value">${char.level}</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">${ui.progress}</span>
+                            <span class="stat-value">${char.progress}</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">${ui.equipment}</span>
+                            <span class="stat-value" style="color: ${eqColor};">${data.equipment}</span>
+                        </div>
+
+                        <div class="desc-box">
+                            "${data.desc}"
+                        </div>
+
+                        <div class="price-box">
+                            ${char.price}
+                        </div>
+
+                        <a href="${discordLink}" target="_blank" class="btn-discord">
+                            <i class="fa-brands fa-discord"></i> ${ui.btnContact}
+                        </a>
+                    </div>
+                `;
+                container.innerHTML += cardHTML;
+            });
+        }
+
+        loadData();
+    </script>
+</body>
+</html>
