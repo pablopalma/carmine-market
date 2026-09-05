@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mercado LU4 Carmine | Personajes</title>
+    <title>Mercado LU4 | Carmine & Gamma</title>
     
     <link rel="icon" type="image/png" href="image/logo.png">
 
-    <meta property="og:title" content="Mercado LU4 Carmine | Personajes">
-    <meta property="og:description" content="Mercado de personajes del servidor LU4 Carmine. Adquiere tu héroe, farmea y domina el servidor.">
+    <meta property="og:title" content="Mercado LU4 | Personajes">
+    <meta property="og:description" content="Mercado de personajes de los servidores Carmine y Gamma. Adquiere tu héroe, farmea y domina el servidor.">
     <meta property="og:image" content="https://pablopalma.github.io/carmine-market/Screenshot_228.png"> 
     <meta property="og:url" content="https://pablopalma.github.io/carmine-market/">
     <meta name="twitter:card" content="summary_large_image">
+    
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- TEMA LINEAGE 2: OSCURO Y DORADO --- */
         :root {
             --bg-dark: #0a0a0d;
             --bg-panel: #16161c;
@@ -48,7 +48,6 @@
             text-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
         }
 
-        /* --- HEADER --- */
         header {
             padding: 15px 20px;
             background: linear-gradient(to bottom, #000000, rgba(10, 10, 13, 0.9));
@@ -72,7 +71,6 @@
             gap: 15px;
         }
 
-        /* --- CONTENEDOR DEL LOGO Y TÍTULO --- */
         .brand-container {
             display: flex;
             align-items: center;
@@ -123,7 +121,6 @@
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
         }
 
-        /* Botón de solicitar PJ en el header */
         .btn-request {
             display: flex;
             align-items: center;
@@ -147,7 +144,6 @@
             box-shadow: 0 0 15px rgba(243, 229, 171, 0.4);
         }
 
-        /* --- PORTADA (HERO SECTION) --- */
         .hero {
             position: relative;
             width: 100%;
@@ -190,11 +186,30 @@
             margin: 0;
         }
 
-        /* --- CONTENEDOR Y CARDS --- */
         .container {
             max-width: 1200px;
-            margin: 40px auto;
+            margin: 0 auto 60px auto;
             padding: 0 20px;
+        }
+
+        /* --- TÍTULOS DE SECCIÓN (CARMINE / GAMMA) --- */
+        .server-heading {
+            font-size: 2.2rem;
+            color: var(--gold-light);
+            text-align: left;
+            border-bottom: 2px solid var(--gold-dark);
+            padding-bottom: 15px;
+            margin-top: 60px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .server-heading i {
+            color: var(--gold-primary);
         }
 
         .grid {
@@ -283,7 +298,6 @@
             text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
         }
 
-        /* --- BOTÓN DISCORD DE LA CARD --- */
         .btn-discord {
             display: flex;
             justify-content: center;
@@ -317,27 +331,16 @@
             font-size: 1.5rem;
             color: var(--gold-primary);
             grid-column: 1 / -1;
+            margin-top: 50px;
         }
 
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                justify-content: center;
-            }
-            .brand-container {
-                justify-content: center;
-            }
-            .header-actions {
-                width: 100%;
-                justify-content: center;
-            }
-            .hero {
-                margin-top: 130px;
-                height: 40vh;
-            }
-            .hero-title {
-                font-size: 2.2rem;
-            }
+            .header-content { flex-direction: column; justify-content: center; }
+            .brand-container { justify-content: center; }
+            .header-actions { width: 100%; justify-content: center; }
+            .hero { margin-top: 130px; height: 40vh; }
+            .hero-title { font-size: 2.2rem; }
+            .server-heading { font-size: 1.8rem; justify-content: center; text-align: center;}
         }
     </style>
 </head>
@@ -365,10 +368,9 @@
         </div>
     </section>
 
-    <main class="container">
-        <div class="grid" id="characters-container">
-            <div class="loading">Cargando personajes... / Loading characters...</div>
-        </div>
+    <main class="container" id="main-content">
+        <div class="loading">Cargando personajes... / Loading characters...</div>
+        <!-- El JS inyectará las secciones de Carmine y Gamma aquí -->
     </main>
 
     <script>
@@ -387,7 +389,9 @@
                 currentLevel: "Nivel Actual",
                 equipment: "Equipo",
                 btnContact: "Comprar",
-                btnRequest: "Solicitar PJ"
+                btnRequest: "Solicitar PJ",
+                serverCarmine: "Servidor Carmine",
+                serverGamma: "Servidor Gamma"
             },
             en: {
                 title: "LU4 Market",
@@ -398,7 +402,9 @@
                 currentLevel: "Current Level",
                 equipment: "Gear",
                 btnContact: "Buy",
-                btnRequest: "Request Char"
+                btnRequest: "Request Char",
+                serverCarmine: "Carmine Server",
+                serverGamma: "Gamma Server"
             }
         };
 
@@ -408,7 +414,7 @@
                 characters = await response.json();
                 renderPage();
             } catch (error) {
-                document.getElementById('characters-container').innerHTML = 
+                document.getElementById('main-content').innerHTML = 
                     `<div class="loading" style="color: red;">Error al cargar los datos. Verifica el archivo data.json.</div>`;
                 console.error("Error cargando el JSON:", error);
             }
@@ -427,8 +433,12 @@
             document.getElementById('hero-subtitle').textContent = uiText[currentLang].heroSubtitle;
             document.getElementById('request-text').textContent = uiText[currentLang].btnRequest;
             
-            const container = document.getElementById('characters-container');
-            container.innerHTML = '';
+            const mainContainer = document.getElementById('main-content');
+            mainContainer.innerHTML = ''; // Limpiamos el loading
+
+            // Creamos las secciones de los servidores
+            let carmineHTML = `<h2 class="server-heading"><i class="fa-brands fa-d-and-d"></i> ${uiText[currentLang].serverCarmine}</h2><div class="grid">`;
+            let gammaHTML = `<h2 class="server-heading"><i class="fa-solid fa-khanda"></i> ${uiText[currentLang].serverGamma}</h2><div class="grid">`;
 
             characters.forEach(char => {
                 const data = char[currentLang];
@@ -471,8 +481,20 @@
                         </a>
                     </div>
                 `;
-                container.innerHTML += cardHTML;
+
+                // Clasificamos por servidor
+                if(char.server === 'carmine') {
+                    carmineHTML += cardHTML;
+                } else if(char.server === 'gamma') {
+                    gammaHTML += cardHTML;
+                }
             });
+
+            carmineHTML += `</div>`; // Cerramos el grid de Carmine
+            gammaHTML += `</div>`;   // Cerramos el grid de Gamma
+
+            // Agregamos todo al HTML (si no hay personajes en alguno, igual se mostrará el título vacío, o puedes agregar lógica para ocultarlo si lo prefieres)
+            mainContainer.innerHTML = carmineHTML + gammaHTML;
         }
 
         loadData();

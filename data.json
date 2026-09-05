@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "server": "carmine",
     "es": {
       "class": "Sword Singer",
       "race": "Elfa",
@@ -19,6 +20,7 @@
   },
   {
     "id": 2,
+    "server": "carmine",
     "es": {
       "class": "Treasure Hunter",
       "race": "Humano",
@@ -37,6 +39,7 @@
   },
   {
     "id": 3,
+    "server": "carmine",
     "es": {
       "class": "Overlord",
       "race": "Orco",
@@ -52,5 +55,24 @@
     "level": 40,
     "currentLevel": "20",
     "price": "600 MC"
+  },
+  {
+    "id": 4,
+    "server": "gamma",
+    "es": {
+      "class": "Bounty Hunter",
+      "race": "Enano",
+      "desc": "La máquina de hacer adena. Listo para spoilear materiales y farmear sin parar.",
+      "equipment": "Equipado (Set C Rind Leather + Dual Dagas Top D +4)"
+    },
+    "en": {
+      "class": "Bounty Hunter",
+      "race": "Dwarf",
+      "desc": "The adena making machine. Ready to spoil materials and farm non-stop.",
+      "equipment": "Equipped (C-Grade Rind Leather Set + Top D Dual Daggers +4)"
+    },
+    "level": 57,
+    "currentLevel": "57",
+    "price": "650 MC"
   }
 ]
