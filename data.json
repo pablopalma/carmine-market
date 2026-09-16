@@ -84,8 +84,50 @@
       "currentLevel": "44",
       "price": "VENDIDO/SOLD"
     },
-    {
+     {
       "id": 5,
+      "server": "carmine",
+      "es": {
+        "class": "Bladedancer",
+        "race": "Elfo oscuro",
+        "desc": "Support",
+        "equipment": "Desnudo (Sin equipo)",
+        "transfer": "A cargo del comprador"
+      },
+      "en": {
+        "class": "Bladedancer",
+        "race": "Dark Elf",
+        "desc": "Support",
+        "equipment": "Naked (No gear)",
+        "transfer": "Paid by buyer"
+      },
+      "level": 30,
+      "currentLevel": "30",
+      "price": "500 MC"
+    },
+     {
+      "id": 6,
+      "server": "carmine",
+      "es": {
+        "class": "Silver Ranger",
+        "race": "Elfo",
+        "desc": "DD",
+        "equipment": "Desnudo (Sin equipo)",
+        "transfer": "A cargo del comprador"
+      },
+      "en": {
+        "class": "Silver Ranger",
+        "race": "Elf",
+        "desc": "DD",
+        "equipment": "Naked (No gear)",
+        "transfer": "Paid by buyer"
+      },
+      "level": 35,
+      "currentLevel": "35",
+      "price": "VENDIDO/SOLD"
+    },
+    {
+      "id": 7,
       "server": "gamma",
       "es": {
         "class": "Bounty Hunter",
