@@ -71,36 +71,11 @@
             gap: 15px;
         }
 
-        .brand-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .server-logo {
-            height: 45px;
-            width: 45px;
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        .server-logo:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
-        }
-
-        .header-title {
-            font-size: 2rem;
-            margin: 0;
-            letter-spacing: 2px;
-        }
-
-        .header-actions {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
+        .brand-container { display: flex; align-items: center; gap: 15px; }
+        .server-logo { height: 45px; width: 45px; border-radius: 50%; box-shadow: 0 0 10px rgba(212, 175, 55, 0.4); transition: all 0.3s ease; }
+        .server-logo:hover { transform: scale(1.1); box-shadow: 0 0 15px rgba(212, 175, 55, 0.8); }
+        .header-title { font-size: 2rem; margin: 0; letter-spacing: 2px; }
+        .header-actions { display: flex; gap: 15px; align-items: center; }
 
         .lang-toggle {
             background: rgba(212, 175, 55, 0.1);
@@ -115,11 +90,7 @@
             border-radius: 4px;
         }
 
-        .lang-toggle:hover {
-            background: var(--gold-primary);
-            color: var(--bg-dark);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-        }
+        .lang-toggle:hover { background: var(--gold-primary); color: var(--bg-dark); box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); }
 
         .btn-request {
             display: flex;
@@ -138,11 +109,7 @@
             transition: all 0.3s ease;
         }
 
-        .btn-request:hover {
-            background-color: var(--gold-light);
-            color: var(--bg-dark);
-            box-shadow: 0 0 15px rgba(243, 229, 171, 0.4);
-        }
+        .btn-request:hover { background-color: var(--gold-light); color: var(--bg-dark); box-shadow: 0 0 15px rgba(243, 229, 171, 0.4); }
 
         .hero {
             position: relative;
@@ -165,34 +132,12 @@
             background: linear-gradient(to bottom, rgba(10, 10, 13, 0.3) 0%, rgba(10, 10, 13, 0.8) 70%, var(--bg-dark) 100%);
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            padding: 0 20px;
-        }
+        .hero-content { position: relative; z-index: 1; text-align: center; padding: 0 20px; }
+        .hero-title { font-size: 3.5rem; margin-bottom: 10px; text-shadow: 3px 3px 10px #000; }
+        .hero-subtitle { font-size: 1.2rem; color: var(--gold-light); text-shadow: 2px 2px 5px #000; font-style: italic; margin: 0; }
 
-        .hero-title {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            text-shadow: 3px 3px 10px #000;
-        }
+        .container { max-width: 1200px; margin: 0 auto 60px auto; padding: 0 20px; }
 
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: var(--gold-light);
-            text-shadow: 2px 2px 5px #000;
-            font-style: italic;
-            margin: 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto 60px auto;
-            padding: 0 20px;
-        }
-
-        /* --- TÍTULOS DE SECCIÓN (CARMINE / GAMMA) --- */
         .server-heading {
             font-size: 2.2rem;
             color: var(--gold-light);
@@ -208,15 +153,9 @@
             gap: 15px;
         }
 
-        .server-heading i {
-            color: var(--gold-primary);
-        }
+        .server-heading i { color: var(--gold-primary); }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 35px;
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 35px; }
 
         .card {
             background-color: var(--bg-panel);
@@ -226,113 +165,115 @@
             position: relative;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            overflow: hidden; /* Necesario para que el sello no se salga */
         }
 
         .card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 50%;
-            transform: translateX(-50%);
-            width: 60%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+            content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 60%; height: 3px; background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
         }
 
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--gold-dark);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
-        }
+        .card:hover { transform: translateY(-10px); border-color: var(--gold-dark); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15); }
 
-        .card-title {
-            font-size: 1.6rem;
-            margin-top: 0;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding-bottom: 15px;
-        }
+        .card-title { font-size: 1.6rem; margin-top: 0; margin-bottom: 20px; letter-spacing: 1px; border-bottom: 1px solid rgba(212, 175, 55, 0.2); padding-bottom: 15px; position: relative; z-index: 2;}
+        
+        .stat-row { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 0.95rem; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 5px; position: relative; z-index: 2;}
+        .stat-label { color: var(--text-muted); font-weight: 500; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+        .stat-value { color: var(--text-light); font-weight: 700; text-align: right; }
 
-        .stat-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 12px;
-            font-size: 0.95rem;
-            border-bottom: 1px dashed rgba(255,255,255,0.05);
-            padding-bottom: 5px;
-        }
-
-        .stat-label {
-            color: var(--text-muted);
-            font-weight: 500;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-        }
-
-        .stat-value {
-            color: var(--text-light);
-            font-weight: 700;
-        }
-
-        .desc-box {
-            background: rgba(0, 0, 0, 0.4);
-            padding: 15px;
-            border-radius: 6px;
-            border-left: 3px solid var(--gold-dark);
-            font-size: 0.9rem;
-            font-style: italic;
-            line-height: 1.5;
-            margin: 20px 0;
-            color: var(--text-muted);
-            min-height: 70px;
-        }
-
-        .price-box {
-            text-align: center;
-            font-size: 1.8rem;
-            color: var(--gold-light);
-            font-family: 'Cinzel Decorative', serif;
-            font-weight: bold;
-            margin: 25px 0;
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
-        }
-
+        .desc-box { background: rgba(0, 0, 0, 0.4); padding: 15px; border-radius: 6px; border-left: 3px solid var(--gold-dark); font-size: 0.9rem; font-style: italic; line-height: 1.5; margin: 20px 0; color: var(--text-muted); min-height: 70px; position: relative; z-index: 2;}
+        .price-box { text-align: center; font-size: 1.8rem; color: var(--gold-light); font-family: 'Cinzel Decorative', serif; font-weight: bold; margin: 25px 0; text-shadow: 0 0 15px rgba(212, 175, 55, 0.3); position: relative; z-index: 2;}
+        
         .btn-discord {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            width: 100%;
-            background-color: var(--discord);
-            color: white;
-            padding: 15px 0;
-            text-decoration: none;
-            border-radius: 6px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            box-sizing: border-box;
-            border: 1px solid transparent;
+            display: flex; justify-content: center; align-items: center; gap: 10px; width: 100%; background-color: var(--discord); color: white; padding: 15px 0; text-decoration: none; border-radius: 6px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; border: 1px solid transparent; cursor: pointer; position: relative; z-index: 2;
+        }
+        .btn-discord:hover { background-color: #4752C4; transform: scale(1.02); box-shadow: 0 5px 15px rgba(88, 101, 242, 0.4); }
+
+        /* --- ESTILOS PARA TARJETAS VENDIDAS --- */
+        .card.sold-card {
+            opacity: 0.65;
+            filter: grayscale(0.4);
+            border-color: #333;
+        }
+        
+        .card.sold-card:hover {
+            transform: none; /* Quitamos el hover effect */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            border-color: #333;
         }
 
-        .btn-discord:hover {
-            background-color: #4752C4;
-            transform: scale(1.02);
-            box-shadow: 0 5px 15px rgba(88, 101, 242, 0.4);
-        }
-
-        .loading {
-            text-align: center;
+        .sold-stamp {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-25deg);
             font-family: 'Cinzel Decorative', serif;
-            font-size: 1.5rem;
-            color: var(--gold-primary);
-            grid-column: 1 / -1;
-            margin-top: 50px;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: rgba(255, 76, 76, 0.15); /* Rojo transparente */
+            border: 5px solid rgba(255, 76, 76, 0.15);
+            padding: 10px 20px;
+            border-radius: 10px;
+            pointer-events: none; /* Para que no bloquee los clics por si acaso */
+            z-index: 1;
+            letter-spacing: 5px;
+            text-align: center;
         }
+
+        .price-sold {
+            color: #ff4c4c !important;
+            text-shadow: 0 0 15px rgba(255, 76, 76, 0.4) !important;
+        }
+
+        .btn-sold {
+            background-color: #333 !important;
+            color: #888 !important;
+            border-color: #444 !important;
+            cursor: not-allowed !important;
+            pointer-events: none; /* Desactiva el clic en el botón */
+        }
+
+        /* --- SECCIÓN DE COMENTARIOS --- */
+        .comments-section {
+            background: var(--bg-panel);
+            border: 1px solid #2a2a35;
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+
+        .comments-list { margin-bottom: 30px; max-height: 400px; overflow-y: auto; padding-right: 10px; }
+        
+        .comments-list::-webkit-scrollbar { width: 8px; }
+        .comments-list::-webkit-scrollbar-track { background: #0a0a0d; border-radius: 4px; }
+        .comments-list::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 4px; }
+
+        .comment-item {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 3px solid var(--gold-primary);
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .comment-header { display: flex; justify-content: space-between; margin-bottom: 8px; }
+        .comment-nick { font-weight: bold; color: var(--gold-light); font-size: 1.05rem; }
+        .comment-date { color: var(--text-muted); font-size: 0.8rem; }
+        .comment-text { color: var(--text-light); line-height: 1.5; font-size: 0.95rem; margin: 0; }
+
+        .comment-form-box { border-top: 1px solid #2a2a35; padding-top: 25px; }
+        .comment-form-box h3 { text-align: left; font-family: 'Montserrat', sans-serif; font-size: 1.2rem; margin-top: 0; }
+        
+        .form-group { margin-bottom: 15px; }
+        
+        .form-control {
+            width: 100%; background: rgba(0,0,0,0.5); border: 1px solid #333; color: var(--text-light); padding: 12px; border-radius: 4px; font-family: 'Montserrat', sans-serif; box-sizing: border-box; transition: border-color 0.3s;
+        }
+        
+        .form-control:focus { outline: none; border-color: var(--gold-primary); }
+        textarea.form-control { resize: vertical; min-height: 100px; }
+
+        .loading { text-align: center; font-family: 'Cinzel Decorative', serif; font-size: 1.5rem; color: var(--gold-primary); margin-top: 50px; }
 
         @media (max-width: 768px) {
             .header-content { flex-direction: column; justify-content: center; }
@@ -341,6 +282,7 @@
             .hero { margin-top: 130px; height: 40vh; }
             .hero-title { font-size: 2.2rem; }
             .server-heading { font-size: 1.8rem; justify-content: center; text-align: center;}
+            .sold-stamp { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -369,14 +311,14 @@
     </section>
 
     <main class="container" id="main-content">
-        <div class="loading">Cargando personajes... / Loading characters...</div>
-        <!-- El JS inyectará las secciones de Carmine y Gamma aquí -->
+        <div class="loading">Cargando datos... / Loading data...</div>
     </main>
 
     <script>
         const discordLink = "https://discord.com/users/314600554187980800"; 
         
         let characters = [];
+        let commentsData = [];
         let currentLang = 'es';
 
         const uiText = {
@@ -385,33 +327,53 @@
                 heroTitle: "Mercado de Personajes",
                 heroSubtitle: "Adquiere tu héroe y domina el servidor",
                 race: "Raza",
-                level: "Nivel Objetivo",
+                level: "Nivel",
                 currentLevel: "Nivel Actual",
                 equipment: "Equipo",
+                transfer: "Transferencia",
                 btnContact: "Comprar",
+                btnSold: "VENDIDO",
                 btnRequest: "Solicitar PJ",
                 serverCarmine: "Servidor Carmine",
-                serverGamma: "Servidor Gamma"
+                serverGamma: "Servidor Gamma",
+                commentsTitle: "Comentarios",
+                leaveComment: "Deja tu comentario",
+                nickPlaceholder: "Tu Nickname",
+                commentPlaceholder: "¿Qué tal fue tu experiencia?",
+                btnSubmit: "Enviar Comentario",
+                justNow: "Justo ahora"
             },
             en: {
                 title: "LU4 Market",
                 heroTitle: "Character Marketplace",
                 heroSubtitle: "Acquire your hero and dominate the server",
                 race: "Race",
-                level: "Target Level",
-                currentLevel: "Current Level",
+                level: "Level",
+                currentLevel: "Current Lvl",
                 equipment: "Gear",
+                transfer: "Transfer Fee",
                 btnContact: "Buy",
+                btnSold: "SOLD",
                 btnRequest: "Request Char",
                 serverCarmine: "Carmine Server",
-                serverGamma: "Gamma Server"
+                serverGamma: "Gamma Server",
+                commentsTitle: "Comments",
+                leaveComment: "Leave a comment",
+                nickPlaceholder: "Your Nickname",
+                commentPlaceholder: "How was your experience?",
+                btnSubmit: "Submit Comment",
+                justNow: "Just now"
             }
         };
 
         async function loadData() {
             try {
                 const response = await fetch('data.json');
-                characters = await response.json();
+                const data = await response.json();
+                
+                characters = data.characters;
+                commentsData = data.comments;
+                
                 renderPage();
             } catch (error) {
                 document.getElementById('main-content').innerHTML = 
@@ -425,6 +387,24 @@
             renderPage();
         }
 
+        function handleCommentSubmit(event) {
+            event.preventDefault(); 
+            const nickInput = document.getElementById('new-nick');
+            const textInput = document.getElementById('new-text');
+            
+            if(nickInput.value.trim() !== '' && textInput.value.trim() !== '') {
+                commentsData.push({
+                    name: nickInput.value,
+                    text: textInput.value,
+                    date: uiText[currentLang].justNow
+                });
+                renderPage(); 
+                setTimeout(() => {
+                    alert("¡Comentario añadido! Nota técnica: Al usar GitHub Pages, este comentario es temporal y se borrará si recargas la página.");
+                }, 100);
+            }
+        }
+
         function renderPage() {
             if(characters.length === 0) return;
 
@@ -434,21 +414,40 @@
             document.getElementById('request-text').textContent = uiText[currentLang].btnRequest;
             
             const mainContainer = document.getElementById('main-content');
-            mainContainer.innerHTML = ''; // Limpiamos el loading
+            mainContainer.innerHTML = ''; 
 
-            // Creamos las secciones de los servidores
             let carmineHTML = `<h2 class="server-heading"><i class="fa-brands fa-d-and-d"></i> ${uiText[currentLang].serverCarmine}</h2><div class="grid">`;
             let gammaHTML = `<h2 class="server-heading"><i class="fa-solid fa-khanda"></i> ${uiText[currentLang].serverGamma}</h2><div class="grid">`;
 
+            // Construir Personajes
             characters.forEach(char => {
                 const data = char[currentLang];
                 const ui = uiText[currentLang];
-                
                 const eqTextLower = data.equipment.toLowerCase();
                 const eqColor = (eqTextLower.includes('desnudo') || eqTextLower.includes('naked')) ? '#ff4c4c' : '#aee2a4';
 
+                // --- LÓGICA DE "VENDIDO" ---
+                const isSold = char.price.toUpperCase().includes('VENDIDO') || char.price.toUpperCase().includes('SOLD');
+                
+                // Textos condicionales
+                const displayPrice = isSold ? ui.btnSold : char.price;
+                const displayBtn = isSold ? ui.btnSold : ui.btnContact;
+                
+                // Clases condicionales
+                const cardClasses = isSold ? "card sold-card" : "card";
+                const priceClasses = isSold ? "price-box price-sold" : "price-box";
+                const btnClasses = isSold ? "btn-discord btn-sold" : "btn-discord";
+                
+                // Desactivar enlace si está vendido
+                const buttonLink = isSold ? "javascript:void(0)" : discordLink;
+                
+                // Sello de agua gigante (solo si está vendido)
+                const stampHTML = isSold ? `<div class="sold-stamp">${ui.btnSold}</div>` : '';
+                const btnIcon = isSold ? `<i class="fa-solid fa-ban"></i>` : `<i class="fa-brands fa-discord"></i>`;
+
                 const cardHTML = `
-                    <div class="card">
+                    <div class="${cardClasses}">
+                        ${stampHTML}
                         <h2 class="card-title">${data.class}</h2>
                         
                         <div class="stat-row">
@@ -467,34 +466,49 @@
                             <span class="stat-label">${ui.equipment}</span>
                             <span class="stat-value" style="color: ${eqColor};">${data.equipment}</span>
                         </div>
+                        <div class="stat-row">
+                            <span class="stat-label">${ui.transfer}</span>
+                            <span class="stat-value" style="color: var(--gold-light);">${data.transfer}</span>
+                        </div>
 
                         <div class="desc-box">
                             "${data.desc}"
                         </div>
 
-                        <div class="price-box">
-                            ${char.price}
+                        <div class="${priceClasses}">
+                            ${displayPrice}
                         </div>
 
-                        <a href="${discordLink}" target="_blank" class="btn-discord">
-                            <i class="fa-brands fa-discord"></i> ${ui.btnContact}
+                        <a href="${buttonLink}" target="${isSold ? '_self' : '_blank'}" class="${btnClasses}">
+                            ${btnIcon} ${displayBtn}
                         </a>
                     </div>
                 `;
 
-                // Clasificamos por servidor
-                if(char.server === 'carmine') {
-                    carmineHTML += cardHTML;
-                } else if(char.server === 'gamma') {
-                    gammaHTML += cardHTML;
-                }
+                if(char.server === 'carmine') carmineHTML += cardHTML;
+                else if(char.server === 'gamma') gammaHTML += cardHTML;
             });
 
-            carmineHTML += `</div>`; // Cerramos el grid de Carmine
-            gammaHTML += `</div>`;   // Cerramos el grid de Gamma
+            carmineHTML += `</div>`;
+            gammaHTML += `</div>`;
 
-            // Agregamos todo al HTML (si no hay personajes en alguno, igual se mostrará el título vacío, o puedes agregar lógica para ocultarlo si lo prefieres)
-            mainContainer.innerHTML = carmineHTML + gammaHTML;
+            // SECCIÓN DE COMENTARIOS (Comentada tal cual la dejaste)
+            let commentsHTML = `
+                <!-- <h2 class="server-heading" style="justify-content: center; margin-top: 80px;">
+                    <i class="fa-solid fa-users"></i> ${uiText[currentLang].commentsTitle}
+                </h2>
+                <div class="comments-section">
+                    <div class="comments-list"> -->
+            `;
+            
+            // Dibujar lista de comentarios (Comentado)
+            // commentsData.forEach(comment => { ... });
+
+            // Dibujar formulario (Comentado)
+            // commentsHTML += ` ... </div></div>`;
+
+            // Imprimir todo
+            mainContainer.innerHTML = carmineHTML + gammaHTML + commentsHTML;
         }
 
         loadData();
