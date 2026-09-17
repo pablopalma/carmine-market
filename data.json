@@ -25,14 +25,14 @@
       "id": 2,
       "server": "carmine",
       "es": {
-        "class": "Treasure Hunter",
+        "class": "Rogue",
         "race": "Humano",
         "desc": "Excelente daño por la espalda, ideal para farmear adena rápido y hacer pvp.",
         "equipment": "Desnudo (Sin equipo)",
         "transfer": "50/50 (A medias)"
       },
       "en": {
-        "class": "Treasure Hunter",
+        "class": "Rogue",
         "race": "Human",
         "desc": "Excellent backstab damage, ideal for fast adena farming and pvp.",
         "equipment": "Naked (No gear)",
@@ -101,9 +101,9 @@
         "equipment": "Naked (No gear)",
         "transfer": "Paid by buyer"
       },
-      "level": 30,
-      "currentLevel": "30",
-      "price": "500 MC"
+      "level": 36,
+      "currentLevel": "36",
+      "price": "400 MC"
     },
      {
       "id": 6,
