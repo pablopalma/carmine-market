@@ -2,49 +2,7 @@
   "characters": [
     {
       "id": 1,
-      "server": "carmine",
-      "es": {
-        "class": "Sword Singer",
-        "race": "Elfa",
-        "desc": "Ideal para buffear parties físicas. Lista para seguir leveando en partys de melee.",
-        "equipment": "Desnudo (Sin equipo)",
-        "transfer": "A cargo del comprador"
-      },
-      "en": {
-        "class": "Sword Singer",
-        "race": "Elf",
-        "desc": "Ideal for physical party buffs. Ready to continue leveling in melee parties.",
-        "equipment": "Naked (No gear)",
-        "transfer": "Paid by buyer"
-      },
-      "level": 40,
-      "currentLevel": "40",
-      "price": "VENDIDO/SOLD"
-    },
-    {
-      "id": 2,
-      "server": "carmine",
-      "es": {
-        "class": "Rogue",
-        "race": "Humano",
-        "desc": "Excelente daño por la espalda, ideal para farmear adena rápido y hacer pvp.",
-        "equipment": "Desnudo (Sin equipo)",
-        "transfer": "50/50 (A medias)"
-      },
-      "en": {
-        "class": "Rogue",
-        "race": "Human",
-        "desc": "Excellent backstab damage, ideal for fast adena farming and pvp.",
-        "equipment": "Naked (No gear)",
-        "transfer": "50/50 (Split)"
-      },
-      "level": 40,
-      "currentLevel": "40",
-      "price": "350 MC"
-    },
-    {
-      "id": 3,
-      "server": "carmine",
+      "server": "Warcryer",
       "es": {
         "class": "Overlord",
         "race": "Orco",
@@ -59,33 +17,12 @@
         "equipment": "Naked (No gear)",
         "transfer": "Paid by buyer"
       },
-      "level": 48,
-      "currentLevel": "48",
-      "price": "VENDIDO/SOLD"
-    },
-    {
-      "id": 4,
-      "server": "carmine",
-      "es": {
-        "class": "Warcryer",
-        "race": "Orco",
-        "desc": "Support/AOE.",
-        "equipment": "Desnudo (Sin equipo)",
-        "transfer": "A cargo del comprador"
-      },
-      "en": {
-        "class": "Warcryer",
-        "race": "Orc",
-        "desc": "Support/AOE.",
-        "equipment": "Naked (No gear)",
-        "transfer": "Paid by buyer"
-      },
-      "level": 44,
-      "currentLevel": "44",
-      "price": "VENDIDO/SOLD"
+      "level": 40,
+      "currentLevel": "40",
+      "price": "400"
     },
      {
-      "id": 5,
+      "id": 2,
       "server": "carmine",
       "es": {
         "class": "Bladedancer",
@@ -101,30 +38,30 @@
         "equipment": "Naked (No gear)",
         "transfer": "Paid by buyer"
       },
-      "level": 36,
-      "currentLevel": "36",
+      "level": 40,
+      "currentLevel": "40",
       "price": "400 MC"
     },
-     {
-      "id": 6,
+    {
+      "id": 3,
       "server": "carmine",
       "es": {
-        "class": "Silver Ranger",
-        "race": "Elfo",
-        "desc": "DD",
+        "class": "Shillien Elder",
+        "race": "Elfo oscuro",
+        "desc": "Support",
         "equipment": "Desnudo (Sin equipo)",
         "transfer": "A cargo del comprador"
       },
       "en": {
-        "class": "Silver Ranger",
-        "race": "Elf",
-        "desc": "DD",
+        "class": "Shillien Elder",
+        "race": "Dark Elf",
+        "desc": "Support",
         "equipment": "Naked (No gear)",
         "transfer": "Paid by buyer"
       },
-      "level": 35,
-      "currentLevel": "35",
-      "price": "VENDIDO/SOLD"
+      "level": 40,
+      "currentLevel": "40",
+      "price": "400"
     },
     {
       "id": 7,
