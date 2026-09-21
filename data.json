@@ -2,7 +2,7 @@
   "characters": [
     {
       "id": 1,
-      "server": "Warcryer",
+      "server": "carmine",
       "es": {
         "class": "Overlord",
         "race": "Orco",
@@ -64,7 +64,7 @@
       "price": "400"
     },
     {
-      "id": 7,
+      "id": 4,
       "server": "gamma",
       "es": {
         "class": "Bounty Hunter",
