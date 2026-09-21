@@ -18,7 +18,7 @@
         "transfer": "Paid by buyer"
       },
       "level": 40,
-      "currentLevel": "40",
+      "currentLevel": "30",
       "price": "400"
     },
      {
@@ -40,7 +40,7 @@
       },
       "level": 40,
       "currentLevel": "40",
-      "price": "400 MC"
+      "price": "VENDIDO/SOLD"
     },
     {
       "id": 3,
